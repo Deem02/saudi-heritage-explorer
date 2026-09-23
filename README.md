@@ -1,4 +1,4 @@
-# Juthor | Saudi Heritage Explorer
+# Juthor (جذور) | Saudi Heritage Explorer
 
 A modern, single-page frontend for exploring Saudi heritage through a clean and visual experience.
 
