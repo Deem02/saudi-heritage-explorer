@@ -1,0 +1,28 @@
+<section class="section featured" aria-labelledby="featured-heading">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">مختارات</span>
+      <h2 id="featured-heading">تراثٌ مُختار</h2>
+      <p>قطعٌ ورموزٌ تلخّص روح المملكة، من فنجان القهوة إلى نقوش الخنجر.</p>
+    </div>
+
+    @if (items().length === 0) {
+      <p class="featured__empty">لا توجد عناصر ضمن هذه الفئة حاليًا.</p>
+    } @else {
+      <div class="featured__scroller">
+        @for (item of items(); track item.id) {
+          <article class="featured-card glass-panel">
+            <div class="featured-card__media">
+              <img [src]="item.image" [alt]="item.title" loading="lazy" />
+            </div>
+            <div class="featured-card__body">
+              <span class="featured-card__location">{{ item.location }}</span>
+              <h3 class="featured-card__title">{{ item.title }}</h3>
+              <p class="featured-card__desc">{{ item.description }}</p>
+            </div>
+          </article>
+        }
+      </div>
+    }
+  </div>
+</section>

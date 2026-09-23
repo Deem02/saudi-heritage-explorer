@@ -1,0 +1,33 @@
+<section id="explore" class="section explore" aria-labelledby="explore-heading">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">استكشف</span>
+      <h2 id="explore-heading">استكشف التراث السعودي</h2>
+      <p>أربعة أبواب لعالمٍ من الأصالة، اختر ما يشدّك واستعرض ملامحه أدناه.</p>
+    </div>
+
+    <div class="explore__grid">
+      @for (category of categories; track category.id) {
+        <button
+          type="button"
+          class="explore-card glass-panel"
+          [class.explore-card--active]="activeCategory === category.id"
+          (click)="toggleCategory(category.id)"
+          [attr.aria-pressed]="activeCategory === category.id"
+        >
+          <span class="explore-card__media">
+            <img [src]="category.image" [alt]="category.title" loading="lazy" />
+          </span>
+          <span class="explore-card__title">{{ category.title }}</span>
+          <span class="explore-card__desc">{{ category.description }}</span>
+        </button>
+      }
+    </div>
+
+    @if (activeCategoryTitle) {
+      <p class="explore__hint" role="status">
+        يتم عرض مختارات فئة «{{ activeCategoryTitle }}» في قسم المختارات أدناه.
+      </p>
+    }
+  </div>
+</section>

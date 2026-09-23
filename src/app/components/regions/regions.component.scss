@@ -1,0 +1,55 @@
+.regions__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+@media (min-width: 640px) {
+  .regions__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .regions__grid { grid-template-columns: repeat(4, 1fr); gap: 22px; }
+}
+
+.region-card__media {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  box-shadow: 0 16px 34px rgba(27, 26, 24, 0.18);
+}
+
+.region-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.region-card:hover .region-card__media img { transform: scale(1.05); }
+
+.region-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(16, 58, 43, 0) 35%, rgba(12, 28, 21, 0.92) 100%);
+}
+
+.region-card__caption {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: 18px;
+  color: var(--color-ivory);
+}
+
+.region-card__caption h3 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+.region-card__caption p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--color-sand-soft);
+}
